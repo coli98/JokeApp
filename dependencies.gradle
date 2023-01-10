@@ -1,0 +1,74 @@
+def rxjava3_version = "3.1.5"
+def rxjava3_android_version = '3.0.2'
+def timber_version = "5.0.1"
+def retrofit_version = "2.9.0"
+def adapter_rxjava3_version = "2.9.0"
+def okhttp_bom_version = "5.0.0-alpha.10"
+def moshi_version = "1.14.0"
+def core_version = "1.9.0"
+def lifecycle_version = "2.5.1"
+def compose_activity_version ="1.6.1"
+def compose_material_version = "1.1.0-alpha03"
+def junit_version = "4.13.2"
+def mockito_core_version = '4.9.0'
+def mockito_kotlin_version = "4.0.0"
+def compose_viewmodel_version = "2.5.1"
+def compose_version = '1.3.2'
+
+ext {
+    core = ["androidx.core:core-ktx:$core_version"]
+
+    lifecycle = ["androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"]
+
+    composeActivity = "androidx.activity:activity-compose:$compose_activity_version"
+
+    compose = [
+            "androidx.compose.ui:ui:$compose_version",
+            "androidx.compose.ui:ui-tooling-preview:$compose_version",
+            "androidx.compose.runtime:runtime-rxjava3:$compose_version",
+            "androidx.lifecycle:lifecycle-viewmodel-compose:$compose_viewmodel_version"
+    ]
+
+    composeMaterialDesign=["androidx.compose.material3:material3:$compose_material_version"]
+
+    //Libraries to Unit Tests
+    unitTestsLib = [
+            "junit:junit:$junit_version",
+            "org.mockito:mockito-core:$mockito_core_version",
+            "org.mockito.kotlin:mockito-kotlin:$mockito_kotlin_version",
+    ]
+
+//Rx Java 3 + RxAndroid
+//https://github.com/ReactiveX/RxJava
+//https://github.com/ReactiveX/RxAndroid
+    rxjava3 = [
+            "io.reactivex.rxjava3:rxjava:$rxjava3_version",
+            "io.reactivex.rxjava3:rxandroid:$rxjava3_android_version"
+    ]
+
+    //Retrofit + RxJava3 adapter
+    //https://square.github.io/retrofit/
+    //https://github.com/square/retrofit/tree/master/retrofit-adapters/rxjava3
+    retrofit = [
+            "com.squareup.retrofit2:retrofit:$retrofit_version",
+            "com.squareup.retrofit2:converter-moshi:$retrofit_version",
+            "com.squareup.retrofit2:adapter-rxjava3:$adapter_rxjava3_version"
+    ]
+
+    //TIMBER
+    //https://github.com/JakeWharton/timber
+    timber = "com.jakewharton.timber:timber:$timber_version"
+
+    //Okhttp
+    //https://github.com/square/okhttp
+    okhttp = [
+            "com.squareup.okhttp3:okhttp:$okhttp_bom_version",
+            "com.squareup.okhttp3:logging-interceptor:$okhttp_bom_version"
+    ]
+
+    //Moshi
+    moshi = [
+            "com.squareup.moshi:moshi:$moshi_version",
+            "com.squareup.moshi:moshi-kotlin:$moshi_version"
+    ]
+}

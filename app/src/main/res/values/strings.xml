@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">JokeApp</string>
+    <string name="no_internet_txt">Your device is not connected to the internet</string>
+    <string name="joke_list_title">List of Jokes:</string>
+    <string name="id_text">Id = </string>
+    <string name="try_again_btn_dialog">Try again</string>
 </resources>
