@@ -8,7 +8,6 @@ sealed class MainState {
     object Loading : MainState()
     data class Loaded(
         val jokeList: List<JokeDto> = emptyList(),
-        val isInternetAvailable: Boolean = false
     ) : MainState()
 }
 

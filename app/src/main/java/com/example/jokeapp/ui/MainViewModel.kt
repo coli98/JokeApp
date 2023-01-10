@@ -25,11 +25,12 @@ class MainViewModel @Inject constructor(
 
     private fun onShowDelivery(elementId: Int) = Completable.fromAction {
         val oldState = stateSubject.value as MainState.Loaded
-        val newJokeList = oldState.jokeList.toMutableList()
-        newJokeList[elementId] = newJokeList[elementId]
+        val oldList = oldState.jokeList
+        val newElement = oldList[elementId]
             .copy(isDeliveryShowed = oldState.jokeList[elementId].isDeliveryShowed.not())
-        val newState = oldState.copy(jokeList = newJokeList)
-        stateSubject.onNext(newState)
+        val newList = oldList.toMutableList()
+        newList[elementId] = newElement
+        stateSubject.onNext(oldState.copy(jokeList = newList))
     }
 
     private fun onLoadJokesFromApi(): Completable =

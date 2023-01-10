@@ -90,23 +90,14 @@ class MainViewModelTest {
     @Test
     fun shouldShowJokeDeliveryWhenCardClicked() {
         stateSubject.onNext(
-            MainState.Loaded(
-                testJokeList,
-                isInternetAvailable = true
-            )
+            MainState.Loaded(testJokeList)
         )
         val viewModel = createSUT()
         val testObserver = viewModel.observeState().test()
         viewModel.onAction(MainAction.ShowJokeDelivery(0)).test()
         testObserver.assertValues(
-            MainState.Loaded(
-                testJokeList,
-                isInternetAvailable = true
-            ),
-            MainState.Loaded(
-                testJokeListAfterShowDelivery,
-                isInternetAvailable = true
-            )
+            MainState.Loaded(testJokeList),
+            MainState.Loaded(testJokeListAfterShowDelivery)
         )
     }
 

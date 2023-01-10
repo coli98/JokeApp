@@ -38,6 +38,11 @@ class MainActivity : ComponentActivity() {
         }
     }
 
+    override fun onDestroy() {
+        compositeDisposable.dispose()
+        super.onDestroy()
+    }
+
     private fun subscribeTo(action: MainAction) {
         compositeDisposable.add(
             viewModel.onAction(action)
