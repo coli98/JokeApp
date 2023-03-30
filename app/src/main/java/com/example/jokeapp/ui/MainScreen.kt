@@ -9,6 +9,7 @@ import androidx.compose.runtime.rxjava3.subscribeAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.tooling.preview.Preview
 import com.example.jokeapp.R
 import com.example.jokeapp.coreui.composecomponents.CustomDialog
 import com.example.jokeapp.coreui.composecomponents.largePadding
@@ -104,7 +105,16 @@ private fun ListOfJokes(jokeList: List<JokeDto>, onAction: (action: MainAction) 
     }
 }
 
-
+@Composable
+@Preview(showSystemUi = true)
+fun LoadingIconPreview() {
+    Column(
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center
+    ) {
+        CircularProgressIndicator()
+    }
+}
 
 
 
